@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div style="position: sticky;top: 0;background-color: #606264;width: 100%;z-index: 1;padding-top: 20px;border-radius: 8px 8px 0 0;padding-bottom: 20px;">
         <h1 style="direction: ltr;margin-bottom: 15px;">396 Days to 30 yo</h1>
         <div
             style="display: flex;align-items: center;justify-content: center;flex-wrap: wrap;color: #fff;direction: ltr;font-size: 20px;">
@@ -20,18 +20,20 @@
             <div style="padding: 3px 12px 3px 12px;">5.Sex only with wife</div>
             <div style="padding: 3px 12px 3px 12px;">6.Social media only for work</div>
         </div>
+    </div>
+    <div class="container">
         <div id="checkboxes" class="font-family-medium"></div>
     </div>
 
     <script>
         const TOTAL_BOXES = 396;
-        const startDate = new Date(2025, 3, 1);
+        const startDate = new Date(2025, 2, 1);
         const storageKey = 'dailyCheckboxes';
         let checkboxStates = JSON.parse(localStorage.getItem(storageKey)) || Array(TOTAL_BOXES).fill(false);
         const container = document.getElementById('checkboxes');
         const today = new Date();
         today.setHours(0, 0, 0, 0);
-
+        let todayCheckbox = null;
         for (let i = 0; i < TOTAL_BOXES; i++) {
             const currentDay = new Date(startDate.getTime());
             currentDay.setDate(startDate.getDate() + i);
@@ -43,6 +45,8 @@
             checkbox.checked = checkboxStates[i];
             if (currentDay < today) {
                 checkbox.disabled = true;
+            } else if (currentDay.getTime() === today.getTime()) {
+                todayCheckbox = div;
             }
             checkbox.addEventListener('change', () => {
                 checkboxStates[i] = checkbox.checked;
@@ -54,6 +58,11 @@
             div.appendChild(checkbox);
             div.appendChild(label);
             container.appendChild(div);
+        }
+        if (todayCheckbox) {
+            setTimeout(() => {
+                todayCheckbox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 500);
         }
     </script>
 </body>
