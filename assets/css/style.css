@@ -70,7 +70,7 @@ h1 {
 }
 
 #checkboxes {
-  font-size: 19px;
+  font-size: 26px;
   margin-top: 30px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
