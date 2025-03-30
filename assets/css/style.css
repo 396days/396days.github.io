@@ -1,0 +1,98 @@
+@font-face {
+  font-family: "iranSansUltraLight";
+  src: url("../fonts/IRANSansUltraLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "iranSansLight";
+  src: url("../fonts/IRANSansLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "iranSans";
+  src: url("../fonts/IRANSans.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "iranSansMedium";
+  src: url("../fonts/IRANSansMedium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "iranSansBold";
+  src: url("../fonts/IRANSansBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "iranSansBlack";
+  src: url("../fonts/IRANSansBlack.ttf") format("truetype");
+}
+
+.font-family-ultra-light {
+  font-family: iranSansUltraLight !important;
+}
+
+.font-family-light {
+  font-family: IRANSansLight !important;
+}
+
+.font-family-medium {
+  font-family: iranSansMedium !important;
+}
+
+.font-family-bold {
+  font-family: iranSansBold !important;
+}
+
+.font-family-black {
+  font-family: iranSansBlack !important;
+}
+
+body {
+  background: #29292e;
+  margin: 0;
+  padding: 20px;
+  direction: rtl;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #606264;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+}
+
+#checkboxes {
+  font-size: 19px;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.checkbox-container {
+  box-shadow: -2px 2px 6px rgba(0, 0, 0, .24);
+  background: #29292e;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-left: 10px;
+}
+
+.checkbox-container label {
+  flex: 1;
+  font-size: 14px;
+  color: #fff;
+}
