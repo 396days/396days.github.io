@@ -46,7 +46,7 @@
             checkbox.id = `checkbox-${i}`;
             checkbox.checked = checkboxStates[i];
             if (currentDay < today) {
-                checkbox.disabled = false;
+                checkbox.disabled = true;
             } else if (currentDay.getTime() === today.getTime()) {
                 todayCheckbox = div;
             }
